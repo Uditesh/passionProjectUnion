@@ -1,0 +1,36 @@
+﻿@model PassionProjUditesh.Models.Order
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Create New Order</h2>
+<form action="/Order/Create" method="post">
+    <div>
+        <label>Order Name:</label>
+        <input type="text" name="OrderName" />
+    </div>
+    <div>
+        <label>Arrived From:</label>
+        <input type="text" name="ArrivedFrom" />
+    </div>
+    <div>
+        <label>Departure To:</label>
+        <input type="text" name="DepartureTo" />
+    </div>
+    <div>
+        <label>Order Date & times:</label>
+        <input type="datetime" name="OrderDateTime" />
+    </div>
+    <div>
+        <label>Customer ID:</label>
+        <input type="number" name="CustomerID" />
+    </div>
+    <div>
+        <label>Sector ID:</label>
+        <input type="number" name="SectorID" />
+    </div>
+    <div>
+        <input type="submit" value="Add Order" />
+    </div>
+</form>
+

@@ -1,0 +1,65 @@
+﻿@model PassionProjUditesh.Models.ViewModels.UpdateOrder
+@{
+    ViewBag.Title = "Update";
+}
+
+<a href="/Order/List">Go back to the Order List</a>
+
+<h2>Update Order</h2>
+
+<h3>Updating the details for @Model.SelectedOrder.CustomerName</h3>
+
+<form action="/Order/Edit/@Model.SelectedOrder.OrderId" method="post">
+    <input type="number" style="display:none" name="OrderId" value="@Model.SelectedOrder.OrderId" />
+
+    <div>
+        <label>Order Name:</label>
+        <input type="text" name="OrderName" value="@Model.SelectedOrder.OrderName" />
+    </div>
+    <div>
+        <label>Arrived From:</label>
+        <input type="text" name="ArrivedFrom" value="@Model.SelectedOrder.ArrivedFrom" />
+    </div>
+    <div>
+        <label>Departure To:</label>
+        <input type="text" name="DepartureTo" value="@Model.SelectedOrder.DepartureTo" />
+    </div>
+    <div>
+        <label>Order Date & times:</label>
+        <input type="datetime" name="OrderDateTime" value="@Model.SelectedOrder.OrderDateTime" />
+    </div>
+    <div>
+        <label>Customer ID:</label>
+        <select name="CustomerID">
+            @foreach (var customer in Model.CustomerOptions)
+            {
+                string selected = "";
+                if (customer.CustomerID == Model.SelectedOrder.CustomerID)
+                {
+                    selected = "selected";
+                }
+                <option value="@customer.CustomerID" @selected>@customer.CustomerName</option>
+
+            }
+        </select>
+    </div>
+    <div>
+        <label>Sector ID:</label>
+        <select name="SectorID">
+            @foreach (var sector in Model.SectorOptions)
+            {
+                string selected = "";
+                if (sector.SectorID == Model.SelectedOrder.SectorID)
+                {
+                    selected = "selected";
+                }
+                <option value="@sector.SectorID" @selected>@sector.SectorName</option>
+
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Update Order" />
+    </div>
+</form>
+

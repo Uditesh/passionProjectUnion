@@ -1,0 +1,19 @@
+﻿@model PassionProjUditesh.Models.OrderDto
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Order Details</h2>
+<a class="a-links" href="/Order/List">Go back to List</a>
+<br />
+<a class="a-links" href="/Order/Update/@Model.OrderId">Update</a>
+<br />
+<a class="a-links" style="color:#ab2020;" href="/Order/DeleteConfirm/@Model.OrderId">Delete</a>
+<br />
+<h2>@Model.OrderName</h2>
+<div>Arrived From : @Model.ArrivedFrom</div>
+<div>Departure To : @Model.DepartureTo</div>
+<div>Order Date & time : @Model.OrderDateTime</div>
+<div>Customer Name : @Model.CustomerName</div>
+<div>Customer Mobile Number : @Model.CustomerMobNum</div>
+

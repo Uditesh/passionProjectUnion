@@ -1,0 +1,14 @@
+﻿@model IEnumerable<PassionProjUditesh.Models.Customer>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<a class="a-links" href="/Customer/New">Add New Customer</a>
+<br />
+@foreach (var cust in Model)
+{
+    <h2><a href="/Customer/Details/@cust.CustomerID">@cust.CustomerName</a></h2>
+    <div>Email : @cust.CustomerEmail</div>
+}
+

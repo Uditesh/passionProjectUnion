@@ -1,0 +1,10 @@
+﻿@model PassionProjUditesh.Models.Customer
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Are you sure you want to delete @Model.CustomerName?</h2>
+<a href="/Customer/List">Cancel</a>
+<form action="/Customer/Delete/@Model.CustomerID" method="post">
+    <input type="submit" value="Confirm Delete" />
+</form>

@@ -1,0 +1,18 @@
+﻿@model PassionProjUditesh.Models.EmployeeDto
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Employee Details</h2>
+<a class="a-links" href="/Employee/List">Go back to List</a>
+<br />
+<a class="a-links" href="/Employee/Update/@Model.EmployeeID">Update</a>
+<br />
+<a class="a-links" style="color:#ab2020;" href="/Employee/DeleteConfirm/@Model.EmployeeID">Delete</a>
+<br />
+<h2>@Model.EmployeeName</h2>
+<div>Mobile Number : @Model.EmployeeMobNum</div>
+<div>Email : @Model.EmployeeEmail</div>
+<div>Address : @Model.EmployeeAdrress</div>
+<div>Sector Name : @Model.SectorName</div>
+

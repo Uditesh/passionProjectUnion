@@ -1,0 +1,11 @@
+﻿@model PassionProjUditesh.Models.Order
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to delete @Model.OrderName?</h2>
+<a href="/Order/List">Cancel</a>
+<form action="/Order/Delete/@Model.OrderId" method="post">
+    <input type="submit" value="Confirm Delete" />
+</form>
+

@@ -1,0 +1,35 @@
+﻿@model PassionProjUditesh.Models.Customer
+@{
+    ViewBag.Title = "Update";
+}
+
+<a href="/Customer/List">Go back to the Customer List</a>
+
+<h2>Update Customer</h2>
+
+<h3>Updating the details for @Model.CustomerName</h3>
+
+<form action="/Customer/Edit/@Model.CustomerID" method="post">
+    <input type="number" style="display:none" name="CustomerID" value="@Model.CustomerID" />
+
+    <div>
+        <label>Name:</label>
+        <input type="text" name="CustomerName" value="@Model.CustomerName" />
+    </div>
+    <div>
+        <label>Mobile Number:</label>
+        <input type="number" name="CustomerMobNum" value="@Model.CustomerMobNum" />
+    </div>
+    <div>
+        <label>Email:</label>
+        <input type="text" name="CustomerEmail" value="@Model.CustomerEmail" />
+    </div>
+    <div>
+        <label>Address:</label>
+        <input type="text" name="CustomerAddress" value="@Model.CustomerAddress" />
+    </div>
+    <div>
+        <input type="submit" value="Update Customer" />
+    </div>
+</form>
+

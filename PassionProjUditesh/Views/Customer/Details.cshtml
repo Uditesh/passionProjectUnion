@@ -1,0 +1,17 @@
+﻿@model PassionProjUditesh.Models.Customer
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Customer Details</h2>
+<a class="a-links" href="/Customer/List">Go back to List</a>
+<br />
+<a class="a-links" href="/Customer/Update/@Model.CustomerID">Update</a>
+<br />
+<a class="a-links" style="color:#ab2020;" href="/Customer/DeleteConfirm/@Model.CustomerID">Delete</a>
+<br />
+<h2>@Model.CustomerName</h2>
+<div>Mobile Number : @Model.CustomerMobNum</div>
+<div>Email : @Model.CustomerEmail</div>
+<div>Address : @Model.CustomerAddress</div>
+

@@ -1,0 +1,32 @@
+﻿@model PassionProjUditesh.Models.Employee
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Create New Employee</h2>
+<form action="/Employee/Create" method="post">
+    <div>
+        <label>Name:</label>
+        <input type="text" name="EmployeeName" />
+    </div>
+    <div>
+        <label>Mobile Number:</label>
+        <input type="number" name="EmployeeMobNum" />
+    </div>
+    <div>
+        <label>Email:</label>
+        <input type="text" name="EmployeeEmail" />
+    </div>
+    <div>
+        <label>Address:</label>
+        <input type="text" name="EmployeeAdrress" />
+    </div>
+    <div>
+        <label>Sector ID:</label>
+        <input type="number" name="SectorID" />
+    </div>
+    <div>
+        <input type="submit" value="Add Employee" />
+    </div>
+</form>
+

@@ -1,0 +1,48 @@
+﻿@model PassionProjUditesh.Models.ViewModels.UpdateEmployee
+    ViewBag.Title = "Update";
+}
+
+<h2>Update Employee</h2>
+<a href="/Employee/List">Go back to the Employee List</a>
+
+<h3>Updating the details for @Model.SelectedEmployee.EmployeeName</h3>
+
+<form action="/Employee/Edit/@Model.SelectedEmployee.EmployeeID" method="post">
+    <input type="number" style="display:none" name="EmployeeID" value="@Model.SelectedEmployee.EmployeeID" />
+
+    <div>
+        <label>Name:</label>
+        <input type="text" name="EmployeeName" value="@Model.SelectedEmployee.EmployeeName" />
+    </div>
+    <div>
+        <label>Mobile Number:</label>
+        <input type="number" name="EmployeeMobNum" value="@Model.SelectedEmployee.EmployeeMobNum" />
+    </div>
+    <div>
+        <label>Email:</label>
+        <input type="text" name="EmployeeEmail" value="@Model.SelectedEmployee.EmployeeEmail" />
+    </div>
+    <div>
+        <label>Address:</label>
+        <input type="text" name="EmployeeAdrress" value="@Model.SelectedEmployee.EmployeeAdrress" />
+    </div>
+    <div>
+        <label>Sector ID:</label>
+        <select name="SectorID">
+            @foreach (var sector in Model.SectorOptions)
+            {
+                string selected = "";
+                if (sector.SectorID == Model.SelectedEmployee.SectorID)
+                {
+                    selected = "selected";
+                }
+                <option value="@sector.SectorID" @selected>@sector.SectorName</option>
+
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Update Employee" />
+    </div>
+</form>
+

@@ -1,0 +1,13 @@
+﻿@model IEnumerable<PassionProjUditesh.Models.OrderDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List of Orders</h2>
+<a class="a-links" href="/Order/New">Add New Order</a>
+@foreach (var ord in Model)
+{
+    <h2><a href="/Order/Details/@ord.OrderId">@ord.OrderName</a></h2>
+    <div>Name : @ord.CustomerName</div>
+}
+

@@ -1,0 +1,13 @@
+﻿@model IEnumerable<PassionProjUditesh.Models.EmployeeDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<a class="a-links" href="/Employee/New">Add New Employee</a>
+@foreach (var emp in Model)
+{
+    <h2><a href="/Employee/Details/@emp.EmployeeID">@emp.EmployeeName</a></h2>
+    <div>Email : @emp.EmployeeEmail</div>
+}
+
